@@ -7,9 +7,9 @@ dropdown__value.addEventListener('click',() => {
     dropdown__list.classList.add('dropdown__list_active')
 })
 dropdown__item.forEach((element) => {
-    element.target.addEventListener('click',() => {
-
-        dropdown__value.textContent = element.target.textContent
-
+    element.addEventListener('click',(event) => {
+        event.preventDefault()
+        dropdown__value.textContent = element.textContent
+        dropdown__list.classList.remove('dropdown__list_active')
     })
 })
